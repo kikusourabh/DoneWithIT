@@ -12,26 +12,41 @@ export default function App() {
         flexDirection: "row", //horizontal
         justifyContent: "center", //primary
         alignItems: "center", //secondary
+        alignContent: "center",
+        flexWrap: "wrap",
       }}
     >
       <View
         style={{
-          backgroundColor: "#ffa36c",
+          backgroundColor: "#d54062",
           width: 100,
           height: 300,
-          alignSelf: "flex-start",
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "#ffa36c",
+          width: 100,
+          height: 100,
         }}
       />
       <View
         style={{
           backgroundColor: "#ebdc87",
           width: 100,
-          height: 200,
+          height: 100,
         }}
       />
       <View
         style={{
           backgroundColor: "#799351",
+          width: 100,
+          height: 100,
+        }}
+      />
+      <View
+        style={{
+          backgroundColor: "#fadcac",
           width: 100,
           height: 100,
         }}
