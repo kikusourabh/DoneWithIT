@@ -11,6 +11,7 @@ import {
   Image,
   TouchableOpacity,
   Button,
+  Alert,
 } from "react-native";
 
 export default function App() {
@@ -21,8 +22,20 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <Button
         color="#8fc0a9"
-        title="click me"
-        onPress={() => console.log("button tapped")}
+        title="Alert button"
+        onPress={() =>
+          Alert.alert("my title", "button tap", [
+            { text: "yes", onPress: () => console.log("pressed yes") },
+            { text: "no", onPress: () => console.log("pressed no") },
+          ])
+        }
+      />
+      <Button
+        color="#8fc0a9"
+        title="promet button"
+        onPress={() =>
+          Alert.prompt("my title", "button tap", (text) => console.log(text))
+        }
       />
       <StatusBar style="auto" />
     </SafeAreaView>
