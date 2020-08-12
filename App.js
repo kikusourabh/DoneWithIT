@@ -13,9 +13,8 @@ export default function App() {
         Hello react native
       </Text>
 
-      {/* 
-      for loading local images from the assets folder
-      <Image source={require("./assets/icon.png")} /> */}
+      {/* for loading local images from the assets folder */}
+      <Image source={require("./assets/icon.png")} />
 
       {/* for loading images from url */}
       <Image
