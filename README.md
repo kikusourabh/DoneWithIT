@@ -1,5 +1,1 @@
 # DoneWithIt
-
-notes
-
-1.
