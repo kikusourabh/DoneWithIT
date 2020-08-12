@@ -10,6 +10,7 @@ import {
   TouchableHighlight,
   Image,
   TouchableOpacity,
+  Button,
 } from "react-native";
 
 export default function App() {
@@ -18,34 +19,11 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text numberOfLines={1} onPress={handlePress}>
-        Hello react native
-      </Text>
-      {/* touchables */}
-      <TouchableHighlight onPress={() => console.log("Image tapped")}>
-        {/* for loading images from url */}
-        <Image
-          blurRadius={10}
-          fadeDuration={1000}
-          source={{
-            width: 200,
-            height: 300,
-            uri: "https://picsum.photos/200/300",
-          }}
-        />
-      </TouchableHighlight>
-      <TouchableOpacity>
-        {/* for loading local images from the assets folder */}
-        <Image source={require("./assets/favicon.png")} />
-      </TouchableOpacity>
-
-      <TouchableNativeFeedback onPress={() => console.log("Image tapped")}>
-        {/* for loading images from url */}
-        <View
-          style={{ width: 200, height: 70, backgroundColor: "#8fc0a9" }}
-        ></View>
-      </TouchableNativeFeedback>
-
+      <Button
+        color="#8fc0a9"
+        title="click me"
+        onPress={() => console.log("button tapped")}
+      />
       <StatusBar style="auto" />
     </SafeAreaView>
   );
