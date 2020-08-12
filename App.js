@@ -17,10 +17,7 @@ export default function App() {
       <View
         style={{
           backgroundColor: "#ffa36c",
-          width: 400,
-          flexGrow: 1,
-          flexBasis: 100,
-          flexShrink: -1,
+          width: 100,
           height: 100,
         }}
       />
@@ -28,6 +25,9 @@ export default function App() {
         style={{
           backgroundColor: "#ebdc87",
           width: 100,
+          top: 20,
+          left: 20,
+          position: "absolute", // relative as default
           height: 100,
         }}
       />
