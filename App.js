@@ -8,18 +8,26 @@ import ViewImageScreen from "./app/screens/ViewImageScreen";
 export default function App() {
   //state
   const [name, setName] = useState("sourabh");
+  const [person, setPerson] = useState({ name: "sourabh", age: 24 });
 
   const pressHandler = () => {
     //checking the sate and proceed on base of the condition
     if (name === "sourabh") {
+      //updating state value
       setName("sourabh karmakar");
+      setPerson({ name: "sourabh karmakar", age: 24 });
     } else {
+      //updating state value
       setName("sourabh");
+      setPerson({ name: "sourabh", age: 24 });
     }
   };
   return (
     <View style={styles.container}>
       <Text>My name is {name}</Text>
+      <Text>
+        Name {person.name} and Age {person.age}
+      </Text>
       <View style={styles.buttonContainer}>
         <Button title="update name" onPress={pressHandler} />
       </View>
