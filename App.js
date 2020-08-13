@@ -11,7 +11,8 @@ import {
 } from "react-native";
 
 import color from "./app/config/color";
-import Header from "./app/screens/Header";
+import Header from "./app/components/Header";
+import TodoItem from "./app/components/TodoItem";
 
 export default function App() {
   const [todos, setTodos] = useState([
@@ -20,7 +21,15 @@ export default function App() {
     { todo: "find sound for the broll and background music", key: "3" },
   ]);
 
-  const renderTodoItem = ({ item }) => <Text>{item.todo}</Text>;
+  const renderTodoItem = ({ item }) => (
+    <TodoItem item={item} presshandler={presshandler}></TodoItem>
+  );
+
+  const presshandler = (key) => {
+    setTodos((prevTodo) => {
+      return prevTodo.filter((todo) => todo.key != key);
+    });
+  };
   return (
     <View style={styles.container}>
       <Header></Header>

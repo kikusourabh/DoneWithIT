@@ -3,7 +3,7 @@ import { Text, StyleSheet, View, Platform } from "react-native";
 import color from "../config/color";
 import Constants from "expo-constants";
 
-function Header(props) {
+function Header() {
   return (
     <View style={styles.HeaderContainer}>
       <Text style={styles.TitleText}>Todo App</Text>
