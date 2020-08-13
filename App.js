@@ -8,8 +8,7 @@ import {
   FlatList,
   TouchableOpacity,
 } from "react-native";
-import WlecomeScreen from "./app/screens/WelcomeScreen";
-import ViewImageScreen from "./app/screens/ViewImageScreen";
+
 import color from "./app/config/color";
 
 export default function App() {
