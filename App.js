@@ -2,14 +2,11 @@ import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import Constants from "expo-constants";
 import {
-  View,
   StyleSheet,
   Text,
-  Button,
-  TextInput,
   SafeAreaView,
-  ScrollView,
   FlatList,
+  TouchableOpacity,
 } from "react-native";
 import WlecomeScreen from "./app/screens/WelcomeScreen";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
@@ -31,8 +28,16 @@ export default function App() {
     { name: "arpita", id: "11" },
     { name: "rohan", id: "12" },
   ]);
+  const pressHandler = (id) => {
+    console.log("id : " + id + " is pressed");
+    setPeople((prevpeople) => {
+      return prevpeople.filter((person) => person.id != id);
+    });
+  };
   const PersonItem = ({ item }) => (
-    <Text style={styles.personContainer}>{item.name}</Text>
+    <TouchableOpacity onPress={() => pressHandler(item.id)}>
+      <Text style={styles.personContainer}>{item.name}</Text>
+    </TouchableOpacity>
   );
   return (
     <SafeAreaView style={styles.container}>
