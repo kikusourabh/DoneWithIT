@@ -1,36 +1,34 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import Constants from "expo-constants";
-import { View, StyleSheet, Text, Button } from "react-native";
+import { View, StyleSheet, Text, Button, TextInput } from "react-native";
 import WlecomeScreen from "./app/screens/WelcomeScreen";
 import ViewImageScreen from "./app/screens/ViewImageScreen";
+import color from "./app/config/color";
 
 export default function App() {
   //state
   const [name, setName] = useState("sourabh");
-  const [person, setPerson] = useState({ name: "sourabh", age: 24 });
+  const [age, setAge] = useState(24);
 
-  const pressHandler = () => {
-    //checking the sate and proceed on base of the condition
-    if (name === "sourabh") {
-      //updating state value
-      setName("sourabh karmakar");
-      setPerson({ name: "sourabh karmakar", age: 24 });
-    } else {
-      //updating state value
-      setName("sourabh");
-      setPerson({ name: "sourabh", age: 24 });
-    }
-  };
   return (
     <View style={styles.container}>
-      <Text>My name is {name}</Text>
       <Text>
-        Name {person.name} and Age {person.age}
+        Name {name} and Age {age}
       </Text>
-      <View style={styles.buttonContainer}>
-        <Button title="update name" onPress={pressHandler} />
-      </View>
+      <TextInput
+        style={styles.Input}
+        placeholder="Name"
+        placeholderTextColor={color.secondary}
+        onChangeText={(text) => setName(text)}
+      />
+      <TextInput
+        style={styles.Input}
+        placeholder="Age"
+        keyboardType="numeric"
+        placeholderTextColor={color.secondary}
+        onChangeText={(text) => setAge(text)}
+      />
     </View>
   );
 }
@@ -38,11 +36,16 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: color.white,
     alignItems: "center",
     justifyContent: "center",
   },
-  buttonContainer: {
-    marginTop: 20,
+  Input: {
+    borderWidth: 1,
+    borderRadius: 10,
+    borderColor: color.blackgrey,
+    padding: 8,
+    margin: 10,
+    width: 200,
   },
 });
