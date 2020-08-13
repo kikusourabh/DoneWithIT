@@ -34,13 +34,11 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        {people.map((person) => {
-          return (
-            <View key={person.key}>
-              <Text style={styles.person}>{person.name}</Text>
-            </View>
-          );
-        })}
+        {people.map((person) => (
+          <View key={person.key}>
+            <Text style={styles.person}>{person.name}</Text>
+          </View>
+        ))}
       </ScrollView>
     </SafeAreaView>
   );
