@@ -8,44 +8,25 @@ import color from "./app/config/color";
 
 export default function App() {
   //state
-  const [name, setName] = useState("sourabh");
-  const [age, setAge] = useState(24);
+  const [people, setPeople] = useState([
+    { name: "sourabh", key: "1" },
+    { name: "rahul", key: "2" },
+    { name: "velsi", key: "3" },
+    { name: "akash", key: "4" },
+    { name: "bhavesh", key: "5" },
+    { name: "simit", key: "6" },
+    { name: "ritika", key: "7" },
+    { name: "soumen", key: "8" },
+    { name: "nikhil", key: "9" },
+    { name: "sreya", key: "10" },
+  ]);
 
-  return (
-    <View style={styles.container}>
-      <Text>
-        Name {name} and Age {age}
-      </Text>
-      <TextInput
-        style={styles.Input}
-        placeholder="Name"
-        placeholderTextColor={color.secondary}
-        onChangeText={(text) => setName(text)}
-      />
-      <TextInput
-        style={styles.Input}
-        placeholder="Age"
-        keyboardType="numeric"
-        placeholderTextColor={color.secondary}
-        onChangeText={(text) => setAge(text)}
-      />
-    </View>
-  );
+  return <View style={styles.container}></View>;
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: color.white,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  Input: {
-    borderWidth: 1,
-    borderRadius: 10,
-    borderColor: color.blackgrey,
-    padding: 8,
-    margin: 10,
-    width: 200,
   },
 });
