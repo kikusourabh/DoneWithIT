@@ -14,6 +14,7 @@ function Header() {
 const styles = StyleSheet.create({
   HeaderContainer: {
     height: 80,
+    justifyContent: "center",
     backgroundColor: color.primary,
   },
   TitleText: {
