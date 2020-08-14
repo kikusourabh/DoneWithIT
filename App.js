@@ -1,7 +1,14 @@
-import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 
-import { StyleSheet, View, FlatList, Alert } from "react-native";
+import {
+  StyleSheet,
+  View,
+  FlatList,
+  Alert,
+  TouchableWithoutFeedback,
+  Keyboard,
+  StatusBar,
+} from "react-native";
 
 import color from "./app/config/color";
 import Header from "./app/components/Header";
@@ -37,15 +44,26 @@ export default function App() {
     }
   };
   return (
-    <View style={styles.container}>
-      <Header />
-      <View style={styles.content}>
-        <AddTodo submitHandler={submitHandler} />
-        <View style={styles.list}>
-          <FlatList data={todos} renderItem={renderTodoItem} />
+    <TouchableWithoutFeedback
+      onPress={() => {
+        console.log("dismised keboard");
+        Keyboard.dismiss();
+      }}
+    >
+      <View style={styles.container}>
+        <StatusBar
+          backgroundColor={color.primaryDark}
+          barStyle="light-content"
+        />
+        <Header />
+        <View style={styles.content}>
+          <AddTodo submitHandler={submitHandler} />
+          <View style={styles.list}>
+            <FlatList data={todos} renderItem={renderTodoItem} />
+          </View>
         </View>
       </View>
-    </View>
+    </TouchableWithoutFeedback>
   );
 }
 

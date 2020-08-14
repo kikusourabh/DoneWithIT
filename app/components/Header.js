@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, StyleSheet, View, Platform } from "react-native";
 import color from "../config/color";
+import { StatusBar } from "expo-status-bar";
 import Constants from "expo-constants";
 
 function Header() {
@@ -13,15 +14,14 @@ function Header() {
 
 const styles = StyleSheet.create({
   HeaderContainer: {
-    height: 80,
-    justifyContent: "center",
+    height: Platform.OS == "android" ? 56 : 80,
     backgroundColor: color.primary,
+    justifyContent: "center",
+    alignItems: "center",
   },
   TitleText: {
     fontSize: 20,
-    textAlign: "center",
     fontWeight: "bold",
-    paddingTop: Constants.statusBarHeight,
     color: color.white,
   },
 });
