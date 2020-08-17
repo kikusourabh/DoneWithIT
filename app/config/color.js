@@ -4,5 +4,5 @@ export default {
   secondary: "#4ecdc4",
   black: "#000000",
   white: "#ffffff",
-  blackgrey: "#3b5249",
+  WindowBackground: "#AEF6C7",
 };
