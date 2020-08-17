@@ -1,4 +1,8 @@
 # Modal with Activityindicator
 
-<img src='./screenshot/sc1.png'>
-<img src='./screenshot/sc2.png'>
+<Table>
+<Tr>
+<Td><img src='./screenshot/sc1.png'></Td>
+<Td><img src='./screenshot/sc2.png'></Td>
+</Tr>
+</Table>
