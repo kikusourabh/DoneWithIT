@@ -1,17 +1,45 @@
 import React from "react";
-import { StyleSheet, Text, Button } from "react-native";
+import { StyleSheet, Text, Button, Image } from "react-native";
 import { View } from "react-native";
 
 import { globalStyle } from "../config/Styles";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import color from "../config/color";
 
 function Home({ navigation }) {
   return (
     <View style={globalStyle.Background}>
-      <Text style={globalStyle.Text}>Home</Text>
+      <View style={styles.animaleContainer}>
+        <TouchableOpacity>
+          <Image
+            style={styles.animalImage}
+            source={require("../assets/cat.png")}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Image
+            style={styles.animalImage}
+            source={require("../assets/dog.png")}
+          />
+        </TouchableOpacity>
+      </View>
       <Button title="About" onPress={() => navigation.navigate("About")} />
     </View>
   );
 }
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  animalImage: {
+    height: 100,
+    width: 100,
+  },
+  animaleContainer: {
+    justifyContent: "space-between",
+    flexWrap: "nowrap",
+    backgroundColor: color.white,
+    flexDirection: "row",
+    flex: 1,
+    ,
+  },
+});
 export default Home;
