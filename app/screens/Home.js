@@ -10,20 +10,27 @@ function Home({ navigation }) {
   return (
     <View style={globalStyle.Background}>
       <View style={styles.animaleContainer}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("About", "cat")}>
           <Image
             style={styles.animalImage}
             source={require("../assets/cat.png")}
           />
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("About", "dog")}>
           <Image
             style={styles.animalImage}
             source={require("../assets/dog.png")}
           />
         </TouchableOpacity>
       </View>
-      <Button title="About" onPress={() => navigation.navigate("About")} />
+      <Text
+        style={[
+          globalStyle.PrimaryTextHeading,
+          { alignSelf: "center", marginTop: 20 },
+        ]}
+      >
+        Click on your faviourate pet animale
+      </Text>
     </View>
   );
 }
@@ -34,10 +41,8 @@ const styles = StyleSheet.create({
     width: 100,
   },
   animaleContainer: {
-    backgroundColor: color.white,
     flexDirection: "row",
     justifyContent: "space-evenly",
-    flex: 1,
   },
 });
 export default Home;

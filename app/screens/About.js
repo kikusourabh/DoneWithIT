@@ -4,10 +4,11 @@ import { View } from "react-native";
 
 import { globalStyle } from "../config/Styles";
 
-function About({ navigation }) {
+function About({ route, navigation }) {
+  const aboutAnimal = route.params;
   return (
     <View style={globalStyle.Background}>
-      <Text style={globalStyle.Text}>About</Text>
+      <Text style={globalStyle.Text}>About {aboutAnimal}</Text>
       <Button title="Home" onPress={() => navigation.goBack()} />
     </View>
   );

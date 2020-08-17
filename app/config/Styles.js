@@ -5,10 +5,10 @@ export const globalStyle = StyleSheet.create({
   Background: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center",
     backgroundColor: color.WindowBackground,
   },
-  Text: {
-    color: color.black,
+  PrimaryTextHeading: {
+    color: color.primary_text,
+    fontSize: 20,
   },
 });
