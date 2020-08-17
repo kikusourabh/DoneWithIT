@@ -1,79 +1,87 @@
 import React, { useState } from "react";
 
 import {
-  StyleSheet,
+  Modal,
   View,
-  FlatList,
   Alert,
+  StyleSheet,
+  Button,
+  Text,
+  ActivityIndicator,
   TouchableWithoutFeedback,
-  Keyboard,
-  StatusBar,
+  TouchableOpacity,
+  TouchableHighlight,
+  TouchableHighlightComponent,
+  TouchableNativeFeedback,
+  Dimensions,
+  Image,
 } from "react-native";
-
+import { colors } from "react-native-elements";
 import color from "./app/config/color";
-import Header from "./app/components/Header";
-import TodoItem from "./app/components/TodoItem";
-import AddTodo from "./app/components/AddTodo";
 
 export default function App() {
-  const [todos, setTodos] = useState([
-    { todo: "write script for the youtube next video", key: "1" },
-    { todo: "Take camera videos for brolls", key: "2" },
-    { todo: "find sound for the broll and background music", key: "3" },
-  ]);
-
-  const renderTodoItem = ({ item }) => (
-    <TodoItem item={item} presshandler={presshandler}></TodoItem>
-  );
-
-  const presshandler = (key) => {
-    setTodos((prevTodo) => {
-      return prevTodo.filter((todo) => todo.key != key);
-    });
-  };
-
-  const submitHandler = (text) => {
-    if (text.length > 3) {
-      setTodos((prevTodo) => {
-        return [{ todo: text, key: Math.random().toString() }, ...prevTodo];
-      });
-    } else {
-      Alert.alert("OPPS!", "Todo must be over 3 chars long", [
-        { text: "understood", onPress: () => console.log("aler closed") },
-      ]);
-    }
-  };
+  const [ModalVisible, setModal] = useState(false);
   return (
-    <TouchableWithoutFeedback
-      onPress={() => {
-        console.log("dismised keboard");
-        Keyboard.dismiss();
-      }}
-    >
-      <View style={styles.container}>
-        <StatusBar
-          backgroundColor={color.primaryDark}
-          barStyle="light-content"
-        />
-        <Header />
-        <View style={styles.content}>
-          <AddTodo submitHandler={submitHandler} />
-          <View style={styles.list}>
-            <FlatList data={todos} renderItem={renderTodoItem} />
+    <View style={styles.container}>
+      <Modal
+        animationType="fade"
+        visible={ModalVisible}
+        transparent={true}
+        onRequestClose={() => setModal(false)}
+      >
+        <View style={styles.ModalContainer}>
+          <View style={styles.ModalInnerContainer}>
+            <TouchableOpacity onPress={() => setModal(false)}>
+              <Image
+                style={styles.CloseImage}
+                source={require("./app/assets/close.png")}
+              />
+            </TouchableOpacity>
+
+            <View style={{ justifyContent: "center", alignItems: "center" }}>
+              <ActivityIndicator size="large" color="#ef540d" />
+
+              <Text style={styles.ModalText}>
+                Hi, this is basic modal of react native
+              </Text>
+            </View>
           </View>
         </View>
-      </View>
-    </TouchableWithoutFeedback>
+      </Modal>
+      <Button title="show model" onPress={() => setModal(true)} />
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: color.white,
+    justifyContent: "center",
+    alignItems: "center",
   },
-  content: {
-    padding: 40,
+  ModalContainer: {
+    flex: 1,
+    justifyContent: "center",
+    height: Dimensions.get("window").height,
+    width: Dimensions.get("window").width,
   },
-  list: { marginTop: 20 },
+  ModalInnerContainer: {
+    flex: 0.2,
+    flexDirection: "column",
+    margin: 20,
+    borderRadius: 10,
+    padding: 20,
+    backgroundColor: color.blackgrey,
+  },
+  ModalText: {
+    color: color.white,
+  },
+  CloseImage: {
+    height: 20,
+    width: 20,
+    alignSelf: "flex-end",
+  },
+  closeButton: {
+    marginTop: 20,
+  },
 });
