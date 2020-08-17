@@ -1,3 +1,4 @@
 # Modal with Activityindicator
 
-<img src='./screenshot/screenshot1.png'>
+<img src='./screenshot/sc1.png'>
+<img src='./screenshot/sc2.png'>
