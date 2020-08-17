@@ -34,12 +34,10 @@ const styles = StyleSheet.create({
     width: 100,
   },
   animaleContainer: {
-    justifyContent: "space-between",
-    flexWrap: "nowrap",
     backgroundColor: color.white,
     flexDirection: "row",
+    justifyContent: "space-evenly",
     flex: 1,
-    ,
   },
 });
 export default Home;
