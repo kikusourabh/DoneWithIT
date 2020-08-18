@@ -7,4 +7,6 @@ export default {
   primary_text: "#212922",
   WindowBackground: "#AEF6C7",
   headerColor: "#8fc0a9",
+  inactive: "#c8d5b9",
+  active: "#68b0ab",
 };

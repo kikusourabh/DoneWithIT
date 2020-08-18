@@ -2,7 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import color from "../config/color";
 import Header from "../components/Header";
-import AboutHome from "../screens/AboutHome";
+import AboutHome from "./TabRoute";
 
 const Stack = createStackNavigator();
 
@@ -30,7 +30,6 @@ function AboutStack() {
           };
         }}
       />
-      {/* <Stack.Screen name="About" component={About} options={hearderOption} /> */}
     </Stack.Navigator>
   );
 }
