@@ -6,7 +6,7 @@ import { globalStyle } from "../config/Styles";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import color from "../config/color";
 
-function Home({ navigation }) {
+function AnimalHome({ navigation }) {
   return (
     <View style={globalStyle.Background}>
       <View style={styles.animaleContainer}>
@@ -69,4 +69,4 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
   },
 });
-export default Home;
+export default AnimalHome;

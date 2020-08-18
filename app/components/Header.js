@@ -1,23 +1,37 @@
 import React from "react";
 import { Text, StyleSheet, View, Platform } from "react-native";
 import color from "../config/color";
-import { StatusBar } from "expo-status-bar";
-import Constants from "expo-constants";
+import { Icon } from "react-native-elements";
 
-function Header() {
+function Header({ Title, navigation }) {
+  const openMenu = () => {
+    navigation.openDrawer();
+  };
   return (
     <View style={styles.HeaderContainer}>
-      <Text style={styles.TitleText}>Todo App</Text>
+      <Icon
+        name="menu"
+        style={styles.Icon}
+        color={color.white}
+        onPress={openMenu}
+      />
+      <View style={styles.HeaderContainer}>
+        <Text style={styles.TitleText}>{Title}</Text>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   HeaderContainer: {
-    height: Platform.OS == "android" ? 56 : 80,
-    backgroundColor: color.primary,
+    width: "95%",
+    height: "100%",
+    flexDirection: "row",
+    alignItems: "flex-start",
     justifyContent: "center",
-    alignItems: "center",
+  },
+  Icon: {
+    position: "relative",
   },
   TitleText: {
     fontSize: 20,

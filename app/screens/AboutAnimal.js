@@ -3,7 +3,7 @@ import { StyleSheet, Text, Button, Image, View } from "react-native";
 
 import { globalStyle } from "../config/Styles";
 
-function About({ route, navigation }) {
+function AboutAnimal({ route, navigation }) {
   const [{ aboutAnimal }, setanimle] = useState(route.params);
   const [{ animalImage }, setImage] = useState(route.params);
   const [{ description }, setDescription] = useState(route.params);
@@ -44,4 +44,4 @@ const styles = StyleSheet.create({
     width: 250,
   },
 });
-export default About;
+export default AboutAnimal;
