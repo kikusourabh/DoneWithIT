@@ -19,7 +19,10 @@ function GestureAnime() {
         { dx: panValue.x, dy: panValue.y },
       ]),
       onPanResponderRelease: () => {
-        Animated.spring(panValue, { toValue: { x: 0, y: 0 } }).start();
+        panValue.flattenOffset();
+        Animated.spring(panValue, {
+          toValue: { x: 0, y: 0 },
+        }).start();
       },
     })
   ).current;
