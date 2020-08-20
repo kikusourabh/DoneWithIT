@@ -1,6 +1,6 @@
 import React from "react";
-import FadeInBall from "./app/screens/FadeInBall";
+import GestureAnime from "./app/screens/GestureAnime";
 
 export default function App() {
-  return <FadeInBall />;
+  return <GestureAnime />;
 }
